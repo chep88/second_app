@@ -1,19 +1,20 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <legend>Students</legend>
 
-<legend>Students</legend>
-
-<% @students.each do |student| %>
-  <div class="col-lg-4">
-    <h4><%= student.name %>, <%= student.age %> Años </h4>
-
-    <ol class="breadcrumb">
-      <li><%= link_to 'Show', student, class:"btn btn-info" %></li>
-      <li><%= link_to 'Edit', edit_student_path(student), class:"btn btn-success" %></li>
-      <li><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></li>
-    </ol>
-  </div>
-<% end %>
-
+  <% @students.each do |student| %>
+    <div class="col-lg-4">
+      <h4><%= student.name %>, <%= student.age %> Años, Correo : <%= student.email %> </h4>
+      <ol class="breadcrumb">
+        <li><%= link_to 'Ver', student, class:"btn btn-info" %></li>
+        <li><%= link_to 'Editar', edit_student_path(student), class:"btn btn-success" %></li>
+        <li><%= link_to 'Eliminar', student, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></li>
+      </ol>
+    </div>
+  <% end %>
+</div>
 <br>
 
-<%= link_to 'New', new_student_path, class:"btn btn-info" %>
+<div class="row">
+  <%= link_to 'New', new_student_path, class:"btn btn-info" %>
+</div>
