@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="<%= params[:action] == 'students' ? 'active' : '' %>"> <%= link_to "Home", students_path %></li>
+            <li class="<%= params[:action] == 'landing' ? 'active' : '' %>"><%= link_to "Landing", pages_landing_path %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
       <%= yield %>
     </div>
